@@ -1,6 +1,0 @@
-this directory includes several files and directories
-project2Intro: introduction of project 2
-main.cpp: main function
-directory "include": header file and class
-directory "Testdata": test data
-directory "result": files that record the output. Ignore it if not needed.
