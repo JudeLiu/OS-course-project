@@ -1,0 +1,83 @@
+/**********************************************************************
+**********************************************************************/
+#ifndef QUEUE_H
+#define QUEUE_H
+#include <string>
+
+#define FIRSTSTART 1
+#define NOTFIRSTSTART 0
+
+extern int memSize;
+
+class Queue
+{
+    public:
+        Queue();
+        ~Queue();
+        bool isEmpty() const {return tail->prev==NULL;}
+        bool isFull() const {return currentLength>=memSize;}
+        void pop();//remove the first element of queue
+        void remove(const int &x);//remove element x from queue
+        void push(const int &x);//push x to the tail of queue
+        int search(const int &x)const;//search x in queue, return the position
+        int frontVal() const {return front->next->data;}
+        int tailVal() const {return tail->prev->data;}
+
+    private:
+        struct node
+        {
+            int data;
+            node *next;
+            node *prev;
+            node (const int &x, node *P= NULL, node *N=NULL){data=x;prev=P;next=N;}
+            node():prev(NULL),next(NULL){}
+            ~node() {}
+        };
+        node *front,*tail;
+        int currentLength;
+        int pointer;
+
+        node* move(int i)const;
+};
+
+class circularQueue
+{
+    public:
+        circularQueue();
+        ~circularQueue();
+
+        bool isEmpty() const {return tail->prev==NULL;}
+        bool isFull() const {return currentLength>=memSize;}
+        page __move(int i)const {return (move(i)->data);}
+        void pointerMove(const int &x){pointer = (pointer + x)% memSize;}
+        int getPointer() const{return pointer;}
+        page frontVal()const {return front->next->data;}
+        page tailVal()const {return tail->prev->data;}
+
+        void setRefBit(const int &x);//set reference bit of x as 1
+        void clearRefBit(const int &x);//clear reference bit of x
+        void clearAllRefBits();
+        int find();//find a page with reference bit 0, return the position of it
+        void push(const page&);
+        void pop();
+        int search(const int &addr)const;
+        void remove(const int &pos);
+
+    private:
+        struct node
+        {
+            page data;
+            node *next;
+            node *prev;
+
+            node (const page &x, node *P= NULL, node *N=NULL){data=x;prev=P;next=N;}
+            node():prev(NULL),next(NULL){}
+        }*front,*tail;
+
+        int pointer;
+        int currentLength;
+
+        node* move(int i)const;
+
+};
+#endif // QUEUE_H

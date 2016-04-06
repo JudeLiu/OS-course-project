@@ -1,0 +1,62 @@
+#ifndef STRUCT_H
+#define STRUCT_H
+
+struct _process
+{
+        std::string name;
+        unsigned long startTime;
+        unsigned long cpuTime;
+        int pageFaultCnt;
+        double IOCount;
+        bool isFirstStart;
+        int currentInst;
+        int currentInstAddr;
+        int elapsedTime;
+        int elapsedTimeStart;
+        int elapsedTimeEnd;
+        int id;
+
+        _process()
+        {
+            isFirstStart = FIRSTSTART;
+            currentInst = 0;
+            currentInstAddr = 0;
+            elapsedTime = 0;
+        }
+};
+
+struct page
+{
+    int addr;//address of page
+    int refBit;//reference bit
+
+    page(){refBit=0;addr=0;}
+    page(const int &a,const int &rb) {addr=a;refBit=rb;}
+    page(const page &p){addr=p.addr;refBit=p.refBit;}
+    page& operator=(const page &p){addr=p.addr;refBit=p.refBit;return *this;}
+};
+
+struct arg
+{
+        int execTimeCycle;
+        unsigned long noExecTimeCycle;
+        arg() {execTimeCycle = 0; noExecTimeCycle = 0;}
+}ps_return_args;//return values of thread ProcessSche
+
+struct PRarg
+{
+    int processNum;
+    int pageSize;
+    string policy;
+    PRarg() {processNum=0;pageSize=0;policy="";}
+};//return values of thread PageRep
+
+struct PSarg
+{
+    int processNum;
+    int quntumSize;
+    string policy;
+    PSarg(){processNum=0;quntumSize=0;policy="";}
+};//parameters of thread ProcessSche
+
+#endif//STRUCT_H
