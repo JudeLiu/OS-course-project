@@ -1,0 +1,44 @@
+#include "./header.h"
+int main(int argc, char *argv[])
+{	
+	clock_t start,end;
+	double elapsed;
+	char ch;
+
+	start = clock();
+
+	FILE *src;
+	FILE *dest;
+	//Open source file
+	src = fopen(argv[1],"r");
+	
+	//open destination file
+	dest = fopen(argv[2],"w+");
+
+	//Check for file error
+	if(src == NULL)
+	{
+		printf("Error: Could not open file'%s'.\n",argv[1]);
+		//	exit(-1);
+	}
+	
+	if(dest == NULL)
+	{
+		printf("Error:Coule not open file'%s'.\n",argv[2]);
+		fclose(src);
+		//	exit(-1);
+	}
+	
+	while((ch=fgetc(src))!= EOF)
+	{
+		fputc(ch,dest);
+	}
+	
+	fclose(src);
+	fclose(dest);
+	end = clock();
+	elapsed = ((double)(end-start)) / CLOCKS_PER_SEC * 100;
+	printf("Time used:%f miliisecond(s)\n",elapsed);
+	
+	return 1;
+}

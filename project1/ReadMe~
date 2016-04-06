@@ -1,0 +1,9 @@
+This folder contains 8 .cpp files covering 9 problems and a makefile .
+	"MyCopy.cpp" for problem 1,
+	"ForkCopy.cpp" for problem 2,
+	"PipeCopy.cpp" for problem 3,
+	"MyShell.cpp" for both problem 5 and 6,
+	"DupShell.cpp" for problem 7,
+	"MergesortMulti.cpp" for problem 8,
+	and "BurgerBuddies.cpp" for problem 9.
+ 

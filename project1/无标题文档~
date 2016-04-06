@@ -1,0 +1,55 @@
+Cooks[2], Cashiers[4], Customers[10].
+Begin  run.
+Customer [2] comes.
+Cashier [3] acccepts an order.
+customer [2] leaves.
+customerCnt9
+Cook [2] makes a burger.
+Cook [2] makes a burger.
+Cook [2] makes a burger.
+Cashier [3] takes a burger to customer.
+Customer [6] comes.
+customer [6] leaves.
+customerCnt8
+Customer [10] comes.
+customer [10] leaves.
+customerCnt7
+Customer [5] comes.
+customer [5] leaves.
+customerCnt6
+Customer [4] comes.
+customer [4] leaves.
+customerCnt5
+Cook [1] makes a burger.
+Cook [2] makes a burger.
+Customer [7] comes.
+Cashier [1] acccepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [1] acccepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [1] acccepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [2] acccepts an order.
+Cashier [2] takes a burger to customer.
+Customer [3] comes.
+customer [3] leaves.
+customerCnt4
+Cashier [4] acccepts an order.
+customer [7] leaves.
+customerCnt3
+Customer [1] comes.
+Cashier [4] takes a burger to customer.
+Cook [2] makes a burger.
+customer [1] leaves.
+customerCnt2
+Customer [9] comes.
+Cashier [3] acccepts an order.
+Cashier [3] takes a burger to customer.
+customer [9] leaves.
+customerCnt1
+Cook [1] makes a burger.
+Customer [8] comes.
+customer [8] leaves.
+customerCnt0
+cook [2] break
+
